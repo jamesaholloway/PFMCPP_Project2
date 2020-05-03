@@ -17,14 +17,12 @@ video: Chapter 2 - Part 3
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t)
  put them here: 
  
- 
- 
- 
- 
- 
- 
- 
- 
+ int
+ char
+ bool
+ float
+ double
+ void
  
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration function.
@@ -65,10 +63,26 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
+    int count = 1;
+    int type = 5;
+
+    char whatIsMyName[] = "james";
+    char synthesizerType[] = "Roland";
+    char houseName[] = "The Mooring";
+
+    bool isItAFlag = true;
+    bool doIKnowWhatImDoing = false;
+    bool canWeFixIt = true;
+
+    float myHeight = 189.2f;
+    float howLongIsIt = 1234.5f;
+    float filterValue = 0.67f;
+
+    double highPrecision = 0.1234567;
+    double scalingFactor = 1.23456;
+    double oscillatorShift = 345.23456;
     
-    
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, count, type, whatIsMyName, synthesizerType, houseName, isItAFlag, doIKnowWhatImDoing, canWeFixIt, myHeight, howLongIsIt, filterValue, highPrecision, scalingFactor, oscillatorShift); //passing each variable declared to the ignoreUnused() function
 }
 /*
  10 functions
@@ -83,42 +97,91 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+int playANote(int pitch, float duration = 1.0f)
+{
+    ignoreUnused(pitch, duration);
+    return{};
+}
 
 /*
  2)
  */
+bool doILikeIT(int whatIsIt, bool isItNice = true)
+{
+    ignoreUnused(whatIsIt, isItNice);
+    return {};
+}
 
 /*
  3)
  */
+bool catchAFish(bool doIhaveARod = true, float baitType = 1.5f, bool areThereFish = true)
+{
+    ignoreUnused(doIhaveARod, baitType, areThereFish);
+    return{};
+}
 
 /*
  4)
  */
+void watchTV(bool switchedOn = true, int channelNo = 1, float speakerVolume = 1.0f)
+{
+    ignoreUnused(switchedOn, channelNo, speakerVolume);
+}
 
 /*
  5)
  */
+double measureMyHeight(int person = 1, char units[] = "cm")
+{
+    ignoreUnused(measureMyHeight, person, units);
+    return {};
+}
 
 /*
  6)
  */
+int lengthOfPandemic(bool vaccineExists = false, float rFactor = 1.0f, float populationDensity = 1000.0f)
+{
+    ignoreUnused(vaccineExists, rFactor, populationDensity);
+    return{};
+}
 
 /*
  7)
  */
+void doIlikeThisSong(int musicGenre, int myFavouriteGenre = 5, bool isItGood = true)
+{
+    ignoreUnused(musicGenre, myFavouriteGenre, isItGood);
+}
 
 /*
  8)
  */
+float lengthOfJump(float runSpeed = 0.0f, float jumpHeight = 0.0f, float jumperWeight = 0.0f)
+{
+    ignoreUnused(runSpeed, jumpHeight, jumperWeight);
+    return {};
+}
 
 /*
  9)
  */
+float distanceDriven(float speedOfTravel = 0.0f, float timeOfTravel = 0.0f)
+{
+    ignoreUnused(speedOfTravel, timeOfTravel);
+    return {};
+}
 
 /*
  10)
  */
+bool isThisTheLastOne(int lengthOfList = 10, int listCount = 1)
+{
+    ignoreUnused(lengthOfList, listCount);
+    return{};
+}
+
 
 int main()
 {
@@ -126,27 +189,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto notePlayed = playANote(440, 1.0f);
     //2)
-    
+    auto amIHappy = doILikeIT(5, true);
     //3)
-    
+    auto canWeEatFish = catchAFish(true, 2.0f, false);
     //4)
-    
+    watchTV(true, 100, 9.0f);
     //5)
-    
+    auto myHeight = measureMyHeight(5, "in");
     //6)
-    
+    auto howLongIndoors = lengthOfPandemic(false, 0.9f, 1000.0f);
     //7)
-    
+    doIlikeThisSong(4, 4, false);
     //8)
-    
+    auto howFarDidIJump = lengthOfJump(10.0f, 1.5f, 85.4f);
     //9)
-    
+    auto howFarDriven = distanceDriven(56.5f, 1834.6f);
     //10)
+    auto amIDone = isThisTheLastOne(10, 10);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, notePlayed, amIHappy, canWeEatFish, myHeight, howLongIndoors, howFarDidIJump, howFarDriven, amIDone);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
