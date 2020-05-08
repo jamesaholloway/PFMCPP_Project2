@@ -66,9 +66,9 @@ void variableDeclarations()
     int count = 1;
     int type = 5;
 
-    char whatIsMyName[] = "james";
-    char synthesizerType[] = "Roland";
-    char houseName[] = "The Mooring";
+    char whatIsMyName = 'j';
+    char synthesizerType = 'R';
+    char houseName = 'T';
 
     bool isItAFlag = true;
     bool doIKnowWhatImDoing = false;
@@ -132,7 +132,7 @@ void watchTV(bool switchedOn = true, int channelNo = 1, float speakerVolume = 1.
 /*
  5)
  */
-double measureMyHeight(int person = 1, char units[] = "cm")
+double measureMyHeight(int person = 1, char units = 'c')
 {
     ignoreUnused(measureMyHeight, person, units);
     return {};
@@ -197,7 +197,7 @@ int main()
     //4)
     watchTV(true, 100, 9.0f);
     //5)
-    auto myHeight = measureMyHeight(5, "in");
+    auto myHeight = measureMyHeight(5, 'i');
     //6)
     auto howLongIndoors = lengthOfPandemic(false, 0.9f, 1000.0f);
     //7)
